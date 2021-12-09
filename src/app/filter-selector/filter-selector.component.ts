@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter-selector',
@@ -6,7 +6,7 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./filter-selector.component.css'],
 })
 export class FilterSelectorComponent implements OnInit {
-  @Output() btnRadio: any;
+  btnRadio(value) {}
 
   constructor() {}
 

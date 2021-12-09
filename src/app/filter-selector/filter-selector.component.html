@@ -8,7 +8,8 @@
         id="title-name"
         name="radio-filter"
         value="title"
-        (click)="(btnRadio)"
+        #title
+        (click)="btnRadio(title.value)"
       />
       <span class="label-body"> Title </span>
     </label>

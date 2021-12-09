@@ -17,19 +17,23 @@ export class AppComponent implements OnInit {
   //   this.searchItem = name;
   // }
 
-  getUserByName(name) {
-    if (name === '') {
-      this.users = this.dataService.getUsersData();
-    } else {
-      let usersArray = [];
-      for (let user of this.dataService.getUsersData()) {
-        if (user.name.last.includes(name)) {
-          usersArray.push(user);
-        }
-      }
-      this.users = usersArray;
-      usersArray = [];
-    }
+  getUserByName(nameSearch: string) {
+    this.users = this.dataService
+      .getUsersData()
+      .filter((x) => x.name.last.indexOf(nameSearch) > -1);
+
+    // if (name === '') {
+    //   this.users = this.dataService.getUsersData();
+    // } else {
+    //   let usersArray = [];
+    //   for (let user of this.dataService.getUsersData()) {
+    //     if (user.name.last.includes(name)) {
+    //       usersArray.push(user);
+    //     }
+    //   }
+    //   this.users = usersArray;
+    //   usersArray = [];
+    // }
   }
 
   ngOnInit() {
