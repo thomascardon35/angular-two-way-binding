@@ -7,7 +7,9 @@
   <p *ngIf="yourName">Bienvenue {{ yourName }}</p>
 
   <h2>Mini App</h2>
-  <app-search-bar (eventEmitter)="getUserByName($event)"></app-search-bar>
-  <app-filter-selector></app-filter-selector>
+  <app-search-bar (eventEmitter)="getUser($event, filterAtt)"></app-search-bar>
+  <app-filter-selector
+    (eventBtn)="getUser(searchItem, $event)"
+  ></app-filter-selector>
   <app-data-table [dataUser]="users"></app-data-table>
 </div>

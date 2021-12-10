@@ -21,7 +21,8 @@
         id="first-name"
         name="radio-filter"
         value="first"
-        (click)="(btnRadio)"
+        #firstName
+        (click)="btnRadio(firstName.value)"
       />
       <span class="label-body"> First Name </span>
     </label>
@@ -33,7 +34,8 @@
         id="last-name"
         name="radio-filter"
         value="last"
-        (click)="(btnRadio)"
+        #lastName
+        (click)="btnRadio(lastName.value)"
       />
       <span class="label-body"> Last Name </span>
     </label>

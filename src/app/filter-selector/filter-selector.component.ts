@@ -6,9 +6,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./filter-selector.component.css'],
 })
 export class FilterSelectorComponent implements OnInit {
-  btnRadio(value) {}
+  @Output() eventBtn = new EventEmitter();
 
   constructor() {}
+
+  btnRadio(value: string) {
+    this.eventBtn.emit(value);
+    console.log(value);
+  }
 
   ngOnInit() {}
 }

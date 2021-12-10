@@ -8,7 +8,8 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit {
   yourName;
-  //searchItem;
+  searchItem = '';
+  filterAtt = 'last';
   users;
 
   constructor(private dataService: DataService) {}
@@ -17,10 +18,16 @@ export class AppComponent implements OnInit {
   //   this.searchItem = name;
   // }
 
-  getUserByName(nameSearch: string) {
+  getUser(nameSearch: string, filtAtt: string) {
+    if (nameSearch != undefined) {
+      this.searchItem = nameSearch;
+    }
+    if (filtAtt != undefined) {
+      this.filterAtt = filtAtt;
+    }
     this.users = this.dataService
       .getUsersData()
-      .filter((x) => x.name.last.indexOf(nameSearch) > -1);
+      .filter((x) => x.name[this.filterAtt].indexOf(this.searchItem) > -1);
 
     // if (name === '') {
     //   this.users = this.dataService.getUsersData();
