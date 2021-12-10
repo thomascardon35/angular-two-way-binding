@@ -8,11 +8,15 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit {
   yourName;
-  searchItem = '';
-  filterAtt = 'last';
+  searchItem;
+  filterAtt;
   users;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+    this.users = this.dataService.getUsersData();
+    this.searchItem = '';
+    this.filterAtt = 'last';
+  }
 
   // getName(name: any) {
   //   this.searchItem = name;
@@ -43,7 +47,5 @@ export class AppComponent implements OnInit {
     // }
   }
 
-  ngOnInit() {
-    this.users = this.dataService.getUsersData();
-  }
+  ngOnInit() {}
 }
