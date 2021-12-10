@@ -19,15 +19,15 @@ export class AppComponent implements OnInit {
   // }
 
   getUser(nameSearch: string, filtAtt: string) {
-    if (nameSearch != undefined) {
-      this.searchItem = nameSearch;
-    }
-    if (filtAtt != undefined) {
-      this.filterAtt = filtAtt;
-    }
+    this.searchItem = nameSearch;
+    this.filterAtt = filtAtt;
+
     this.users = this.dataService
       .getUsersData()
-      .filter((x) => x.name[this.filterAtt].indexOf(this.searchItem) > -1);
+      .filter(
+        (x) =>
+          x.name[filtAtt].toLowerCase().indexOf(nameSearch.toLowerCase()) > -1
+      );
 
     // if (name === '') {
     //   this.users = this.dataService.getUsersData();
