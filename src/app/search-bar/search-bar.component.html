@@ -4,4 +4,22 @@
   #newItem
   (keyup)="affichage(newItem.value)"
 />
+
+<!--
+  Ou comme ca : 
+  <input
+  type="text"
+  placeholder="Recherche"
+  (input)="affichage($event)"
+/>
+
+TYPESCRIPT : 
+
+ affichage(salut: any) {
+    this.eventEmitter.emit(salut.target.value);
+  }
+
+-->
+
+
 <!--<button (click)="affichage(newItem.value)">Valider</button>-->

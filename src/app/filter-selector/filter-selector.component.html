@@ -9,7 +9,7 @@
         name="radio-filter"
         value="title"
         #title
-        (click)="btnRadio(title.value)"
+        (change)="btnRadio(title.value)"
       />
       <span class="label-body"> Title </span>
     </label>
@@ -22,7 +22,7 @@
         name="radio-filter"
         value="first"
         #firstName
-        (click)="btnRadio(firstName.value)"
+        (change)="btnRadio(firstName.value)"
       />
       <span class="label-body"> First Name </span>
     </label>
@@ -35,7 +35,7 @@
         name="radio-filter"
         value="last"
         #lastName
-        (click)="btnRadio(lastName.value)"
+        (change)="btnRadio(lastName.value)"
       />
       <span class="label-body"> Last Name </span>
     </label>

@@ -12,7 +12,6 @@ export class FilterSelectorComponent implements OnInit {
 
   btnRadio(value: string) {
     this.eventBtn.emit(value);
-    console.log(value);
   }
 
   ngOnInit() {}
